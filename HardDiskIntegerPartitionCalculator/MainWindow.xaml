@@ -2,11 +2,26 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HardDiskIntegerPartitionCalculator"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Title="HardDiskIntegerPartitionCalculator: 整数硬盘分区计算器"
+        Width="600"
+        Height="400"
+        ResizeMode="CanMinimize"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d">
+    <StackPanel>
+        <TextBlock FontSize="20"
+                   Text="分区大小：" />
+        <TextBox FontSize="20"
+                 Text="" />
+        <TextBlock FontSize="20"
+                   Text="FAT32：" />
+        <TextBox FontSize="20"
+                 Text="" />
+        <TextBlock FontSize="20"
+                   Text="NTFS：" />
+        <TextBox FontSize="20"
+                 Text="" />
+    </StackPanel>
 </Window>
