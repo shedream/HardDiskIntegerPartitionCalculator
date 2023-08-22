@@ -4,24 +4,98 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:HardDiskIntegerPartitionCalculator"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        Title="HardDiskIntegerPartitionCalculator: 磁盘整数分区计算器"
-        Width="600"
-        Height="400"
+        Title="HDIPC: 磁盘整数分区计算器"
+        Width="500"
+        Height="500"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
         ResizeMode="CanMinimize"
         WindowStartupLocation="CenterScreen"
         mc:Ignorable="d">
-    <StackPanel>
-        <TextBlock FontSize="20"
-                   Text="分区大小：" />
-        <TextBox FontSize="20"
-                 Text="" />
-        <TextBlock FontSize="20"
-                   Text="FAT32：" />
-        <TextBox FontSize="20"
-                 Text="" />
-        <TextBlock FontSize="20"
-                   Text="NTFS：" />
-        <TextBox FontSize="20"
-                 Text="" />
-    </StackPanel>
+
+    <Grid Margin="2">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0"
+                   Grid.ColumnSpan="2"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="20"
+                   Text="分区大小" />
+
+        <TextBox Grid.Row="1"
+                 Grid.Column="0"
+                 HorizontalContentAlignment="Center"
+                 VerticalContentAlignment="Center"
+                 FontSize="60"
+                 MaxLength="6"
+                 Text="{Binding InputPartition, UpdateSourceTrigger=PropertyChanged}" />
+
+        <TextBlock Grid.Row="1"
+                   Grid.Column="1"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="60"
+                   Text="GB" />
+
+        <TextBlock Grid.Row="2"
+                   Grid.ColumnSpan="2"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="20"
+                   Text="FAT32" />
+
+        <TextBox Grid.Row="3"
+                 Grid.Column="0"
+                 HorizontalContentAlignment="Center"
+                 VerticalContentAlignment="Center"
+                 FontSize="60"
+                 IsReadOnly="True"
+                 Text="{Binding OutputFAT32, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" />
+
+        <TextBlock Grid.Row="3"
+                   Grid.Column="1"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="60"
+                   Text="MB" />
+
+        <TextBlock Grid.Row="4"
+                   Grid.ColumnSpan="2"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="20"
+                   Text="NTFS" />
+
+        <TextBox Grid.Row="5"
+                 Grid.Column="0"
+                 HorizontalContentAlignment="Center"
+                 VerticalContentAlignment="Center"
+                 FontSize="60"
+                 IsReadOnly="True"
+                 Text="{Binding OutputNTFS, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" />
+
+        <TextBlock Grid.Row="5"
+                   Grid.Column="1"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="60"
+                   Text="MB" />
+        <StatusBar Grid.Row="6"
+                   Grid.ColumnSpan="2">
+            <TextBlock Text="123" />
+        </StatusBar>
+    </Grid>
 </Window>
