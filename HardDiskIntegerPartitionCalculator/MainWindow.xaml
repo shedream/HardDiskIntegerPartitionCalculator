@@ -12,7 +12,7 @@
         WindowStartupLocation="CenterScreen"
         mc:Ignorable="d">
 
-    <Grid Margin="2">
+    <Grid Margin="4">
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition />
