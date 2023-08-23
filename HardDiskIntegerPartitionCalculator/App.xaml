@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:HardDiskIntegerPartitionCalculator"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary Source="MyDictionary.xaml" />
     </Application.Resources>
 </Application>
