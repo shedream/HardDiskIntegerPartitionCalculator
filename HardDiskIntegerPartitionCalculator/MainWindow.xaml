@@ -18,6 +18,32 @@
         <Style TargetType="{x:Type Border}">
             <Setter Property="CornerRadius" Value="0" />
         </Style>
+
+        <Style x:Key="TagBorderStyle"
+               TargetType="{x:Type Border}">
+            <Setter Property="Height" Value="32" />
+            <Setter Property="Margin" Value="4" />
+            <Setter Property="Padding" Value="8,2" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Background" Value="Azure" />
+            <Setter Property="CornerRadius" Value="16" />
+        </Style>
+
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="Margin" Value="4" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="FontSize" Value="60" />
+        </Style>
+
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="FontSize" Value="60" />
+        </Style>
     </Window.Resources>
 
     <DockPanel>
@@ -48,13 +74,7 @@
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
 
-                    <Border Height="32"
-                            Margin="4"
-                            Padding="8,2"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Center"
-                            Background="Azure"
-                            CornerRadius="16">
+                    <Border Style="{StaticResource TagBorderStyle}">
                         <TextBlock HorizontalAlignment="Center"
                                    VerticalAlignment="Center"
                                    FontSize="20"
@@ -64,21 +84,12 @@
                     <TextBox x:Name="inputtbx"
                              Grid.Row="1"
                              Grid.Column="0"
-                             HorizontalContentAlignment="Center"
-                             VerticalContentAlignment="Center"
-                             Background="Transparent"
-                             BorderThickness="0"
-                             FontSize="60"
                              Foreground="#13404C"
                              MaxLength="6"
                              Text="{Binding InputPartitionStr, UpdateSourceTrigger=PropertyChanged}" />
 
                     <TextBlock Grid.Row="1"
                                Grid.Column="1"
-                               Margin="4"
-                               HorizontalAlignment="Center"
-                               VerticalAlignment="Center"
-                               FontSize="60"
                                Foreground="#13404C"
                                Text="GB" />
                 </Grid>
@@ -98,13 +109,7 @@
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
 
-                    <Border Height="32"
-                            Margin="4"
-                            Padding="8,2"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Center"
-                            Background="Azure"
-                            CornerRadius="16">
+                    <Border Style="{StaticResource TagBorderStyle}">
                         <TextBlock HorizontalAlignment="Center"
                                    VerticalAlignment="Center"
                                    FontSize="20"
@@ -113,21 +118,12 @@
 
                     <TextBox Grid.Row="1"
                              Grid.Column="0"
-                             HorizontalContentAlignment="Center"
-                             VerticalContentAlignment="Center"
-                             Background="Transparent"
-                             BorderThickness="0"
-                             FontSize="60"
                              Foreground="#13404C"
                              IsReadOnly="True"
                              Text="{Binding OutputFAT32, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" />
 
                     <TextBlock Grid.Row="1"
                                Grid.Column="1"
-                               Margin="4"
-                               HorizontalAlignment="Center"
-                               VerticalAlignment="Center"
-                               FontSize="60"
                                Foreground="#13404C"
                                Text="MB" />
                 </Grid>
@@ -147,13 +143,7 @@
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
 
-                    <Border Height="32"
-                            Margin="4"
-                            Padding="8,2"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Center"
-                            Background="Azure"
-                            CornerRadius="16">
+                    <Border Style="{StaticResource TagBorderStyle}">
                         <TextBlock HorizontalAlignment="Center"
                                    VerticalAlignment="Center"
                                    FontSize="20"
@@ -162,21 +152,12 @@
 
                     <TextBox Grid.Row="1"
                              Grid.Column="0"
-                             HorizontalContentAlignment="Center"
-                             VerticalContentAlignment="Center"
-                             Background="Transparent"
-                             BorderThickness="0"
-                             FontSize="60"
                              Foreground="#13404C"
                              IsReadOnly="True"
                              Text="{Binding OutputNTFS, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" />
 
                     <TextBlock Grid.Row="1"
                                Grid.Column="1"
-                               Margin="4"
-                               HorizontalAlignment="Center"
-                               VerticalAlignment="Center"
-                               FontSize="60"
                                Foreground="#13404C"
                                Text="MB" />
                 </Grid>
